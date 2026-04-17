@@ -5,7 +5,7 @@ export default function StickyButtons() {
     <div className="sticky-buttons pb-[env(safe-area-inset-bottom)]">
       {/* Call Now */}
       <a
-        href="tel:+919876543210"
+        href="tel:+919219418113"
         id="sticky-call"
         className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 text-white font-bold py-4 text-base hover:from-green-700 hover:to-green-600 transition-all duration-300"
       >
@@ -21,7 +21,7 @@ export default function StickyButtons() {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20plots%20at%20Gorakhpur.%20Please%20share%20details."
+        href="https://wa.me/919219418113?text=Hi%2C%20I%20am%20interested%20in%20plots%20at%20Gorakhpur.%20Please%20share%20details."
         target="_blank"
         rel="noopener noreferrer"
         id="sticky-whatsapp"

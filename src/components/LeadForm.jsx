@@ -16,7 +16,7 @@ export default function LeadForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (loading) return; // Prevent double submissions
 
@@ -24,16 +24,19 @@ export default function LeadForm() {
     setError("");
 
     try {
-      const response = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      // Format the WhatsApp message with form details
+      const message = `Hi! I am interested in plots at Gorakhpur. Here are my details:
+Name: ${formData.name}
+Phone: ${formData.phone}
+Budget: ${formData.budget || "Not specified"}
+Purpose: ${formData.purpose || "Not specified"}`;
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
-      }
+      // Open WhatsApp in a new tab using the number found on the website
+      const whatsappNumber = "919219418113";
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, "_blank");
 
+      // Show success message within the UI
       setSubmitted(true);
     } catch (err) {
       console.error(err);
