@@ -66,11 +66,19 @@ export default function TrustSection() {
             Trusted <span className="text-gold-gradient">Land Investment</span>
           </h2>
           <p className="text-gray-500 text-sm sm:text-lg">Suvridhi Bhoomi Infra Private Limited</p>
-          <div className="mt-3 sm:mt-4 inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-green-200">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-            </svg>
-            Verified & Registered Company
+          <div className="mt-3 sm:mt-4 inline-flex flex-wrap justify-center items-center gap-2">
+            <span className="bg-green-50 text-green-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-green-200 inline-flex items-center gap-1.5">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+              Trusted Land Investment
+            </span>
+            <span className="bg-blue-50 text-blue-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-blue-200 inline-flex items-center gap-1.5">
+              <span className="text-sm">📝</span> Registry Available
+            </span>
+            <span className="bg-purple-50 text-purple-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-purple-200 inline-flex items-center gap-1.5">
+              <span className="text-sm">🏦</span> Bank Loan Available
+            </span>
           </div>
         </div>
 

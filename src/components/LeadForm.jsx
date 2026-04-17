@@ -62,7 +62,7 @@ Purpose: ${formData.purpose || "Not specified"}`;
             Get a <span className="text-gold-gradient">Free Callback</span> in 5 Minutes
           </h2>
           <p className="mt-2 sm:mt-3 text-gray-500 text-sm sm:text-base max-w-xl mx-auto px-2">
-            Fill the form below and our property expert will call you back within 5 minutes
+            Fill the form below to book your site visit
           </p>
         </div>
 
@@ -82,8 +82,7 @@ Purpose: ${formData.purpose || "Not specified"}`;
                   </svg>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Thank You! 🎉</h3>
-                <p className="text-gray-500 text-sm sm:text-base mb-2">Your request has been received.</p>
-                <p className="text-green-600 font-semibold text-base sm:text-lg">Our team will call you within 5 minutes!</p>
+                <p className="text-green-600 font-semibold text-base sm:text-lg">Thank you! Our team will contact you shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5">
@@ -104,7 +103,7 @@ Purpose: ${formData.purpose || "Not specified"}`;
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Enter your full name"
+                    placeholder="Enter your name"
                     className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-gold-400 outline-none transition-all duration-200 text-gray-900 text-sm sm:text-base placeholder-gray-400 bg-gray-50 focus:bg-white"
                   />
                 </div>
@@ -123,7 +122,7 @@ Purpose: ${formData.purpose || "Not specified"}`;
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="Enter 10-digit number"
+                      placeholder="Enter your mobile number"
                       pattern="[0-9]{10}"
                       maxLength="10"
                       inputMode="numeric"
@@ -196,6 +195,9 @@ Purpose: ${formData.purpose || "Not specified"}`;
                   )}
                 </button>
 
+                <p className="text-center text-blue-600 font-medium text-xs sm:text-sm mt-3">
+                  We will call you within 5 minutes
+                </p>
                 <p className="text-center text-gray-400 text-[11px] sm:text-xs mt-2">
                   🔒 Your information is 100% secure and will not be shared.
                 </p>

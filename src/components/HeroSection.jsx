@@ -35,12 +35,10 @@ export default function HeroSection() {
           style={{ fontFamily: "'Noto Sans Devanagari', 'Outfit', sans-serif", animationDelay: "0.2s" }}
         >
           <span className="block text-gold-gradient text-5xl sm:text-6xl md:text-7xl mb-2 sm:mb-3 drop-shadow-md">₹651/sqft</span>
-          <span className="block text-3xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">में अपना प्लॉट बुक करें</span>
+          <span className="block text-3xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">में प्लॉट</span>
           <div className="text-2xl sm:text-4xl md:text-5xl mt-2">
-            <span className="text-green-300">Gorakhpur</span>
-            <span> में </span>
             <span className="text-gold-300 relative inline-block">
-              Prime Location!
+              — सिर्फ कुछ ही प्लॉट बाकी!
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-gold-400 opacity-60" viewBox="0 0 100 20" preserveAspectRatio="none">
                 <path d="M0,10 Q50,20 100,10" stroke="currentColor" strokeWidth="4" fill="none" />
               </svg>
@@ -53,7 +51,7 @@ export default function HeroSection() {
           className="text-sm sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 font-medium animate-fade-in-up bg-black/20 inline-block px-4 py-2 rounded-lg backdrop-blur-sm"
           style={{ animationDelay: "0.4s" }}
         >
-          📍 Rampur 15 Mill &nbsp;|&nbsp; Sonbarsa Bazar &nbsp;|&nbsp; NH 28 के पास
+          Gorakhpur &nbsp;|&nbsp; NH 28 के पास &nbsp;|&nbsp; Free Site Visit &nbsp;|&nbsp; Easy Booking
         </p>
 
         {/* CTA Buttons — always side by side, normal size */}
@@ -63,7 +61,7 @@ export default function HeroSection() {
             id="hero-cta"
             className="flex-1 max-w-[200px] sm:max-w-[220px] btn-shimmer text-white font-bold text-sm sm:text-lg px-2 sm:px-6 py-3 sm:py-4 rounded-full shadow-2xl hover:shadow-green-500/30 transition-all duration-300 hover:-translate-y-1"
           >
-            🏠 Book Free Visit
+            🏠 Book Free Site Visit
           </a>
           <a
             href="#pricing"

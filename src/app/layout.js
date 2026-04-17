@@ -1,14 +1,13 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Plots in Gorakhpur - Suvridhi Bhoomi Infra Pvt Ltd | ₹651/sqft",
-  description:
-    "Affordable plots at ₹651/sqft near NH 28 in Gorakhpur. Premium plotted land at Rampur Sonbarsa Bazar. Book your dream plot with Suvridhi Bhoomi Infra Private Limited.",
+  title: "Plots in Gorakhpur ₹651/sqft | Suvridhi Bhoomi",
+  description: "Book your residential plot near NH 28 Gorakhpur. Limited plots available.",
   keywords:
     "plots in Gorakhpur, Suvridhi Bhoomi, affordable plots, NH 28, Rampur, Sonbarsa Bazar, plot booking, real estate Gorakhpur",
   openGraph: {
-    title: "Plots in Gorakhpur - Suvridhi Bhoomi | ₹651/sqft",
-    description: "Affordable plots at ₹651/sqft near NH 28 in Gorakhpur",
+    title: "Plots in Gorakhpur ₹651/sqft | Suvridhi Bhoomi",
+    description: "Book your residential plot near NH 28 Gorakhpur. Limited plots available.",
     type: "website",
   },
   robots: "index, follow",
