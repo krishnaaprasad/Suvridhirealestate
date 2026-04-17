@@ -4,6 +4,7 @@ import TrustSection from "@/components/TrustSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import GallerySection from "@/components/GallerySection";
+import LocationSection from "@/components/LocationSection";
 import UrgencySection from "@/components/UrgencySection";
 import LeadForm from "@/components/LeadForm";
 import StickyButtons from "@/components/StickyButtons";
@@ -25,6 +26,7 @@ export default function Home() {
 
       <PricingSection />
       <GallerySection />
+      <LocationSection />
       <UrgencySection />
       <LeadForm />
       <Footer />
