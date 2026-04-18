@@ -25,18 +25,18 @@ export default function Home() {
       <div className="section-divider" />
 
       <PricingSection />
-      
+
       <div className="bg-red-50 text-red-700 text-center py-2 sm:py-3 px-4 font-bold tracking-wide text-sm sm:text-base border-y border-red-200">
         🚨 Limited plots available — Prices increasing soon!
       </div>
-      
+
       <GallerySection />
-      
+
       <div className="bg-gold-50 text-gold-800 text-center py-2 sm:py-3 px-4 font-bold tracking-wide text-sm sm:text-base border-y border-gold-200">
         ⚠️ Book before rates increase
       </div>
-      
-      <LocationSection />
+
+
       <UrgencySection />
       <LeadForm />
       <Footer />

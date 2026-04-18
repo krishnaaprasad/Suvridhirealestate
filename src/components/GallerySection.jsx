@@ -6,7 +6,7 @@ const images = [
   { src: "/banner.jpg", alt: "Suvridhi Bhoomi Plot Banner - Gorakhpur" },
   { src: "/hero-bg.png", alt: "Aerial View of Plot Development" },
   { src: "/gallery-1.png", alt: "Premium Plotted Land with Roads" },
-  { src: "/gallery-2.png", alt: "Wide Road Infrastructure" },
+  { src: "/gallery-4.png", alt: "Modern Plot Development" },
 ];
 
 export default function GallerySection() {
@@ -102,7 +102,7 @@ export default function GallerySection() {
           >
             ✕
           </button>
-          <div 
+          <div
             className="relative w-full max-w-4xl max-h-[85vh]"
             onClick={(e) => e.stopPropagation()}
           >
@@ -120,3 +120,4 @@ export default function GallerySection() {
     </>
   );
 }
+
