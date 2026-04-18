@@ -13,7 +13,7 @@ export default function HeroSection() {
         priority
         quality={90}
       />
-      
+
       {/* Overlay */}
       <div className="hero-overlay absolute inset-0 z-10" />
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
             <p className="text-white/80 text-[10px] sm:text-sm mt-1 sm:mt-2 font-medium uppercase tracking-wider">Sqft Plots</p>
           </div>
           <div className="glass-card rounded-xl p-3 sm:p-5 text-center shadow-lg border border-white/20">
-            <p className="text-2xl sm:text-4xl font-extrabold text-gold-300 leading-none">₹21K</p>
+            <p className="text-2xl sm:text-4xl font-extrabold text-gold-300 leading-none">₹51K</p>
             <p className="text-white/80 text-[10px] sm:text-sm mt-1 sm:mt-2 font-medium uppercase tracking-wider">Booking</p>
           </div>
         </div>
