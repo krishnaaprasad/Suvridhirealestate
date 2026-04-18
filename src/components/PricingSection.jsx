@@ -64,19 +64,25 @@ export default function PricingSection() {
                   <span className="text-gray-300 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base">
                     <span className="text-green-400">✓</span> Booking Amount
                   </span>
-                  <span className="text-green-400 font-bold text-base sm:text-lg">Only ₹21,000</span>
+                  <span className="text-green-400 font-bold text-base sm:text-lg">₹51,000</span>
                 </div>
-                <div className="flex items-center justify-between bg-white/5 rounded-lg sm:rounded-xl px-3.5 sm:px-5 py-2.5 sm:py-3">
-                  <span className="text-gray-300 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base">
-                    <span className="text-green-400">✓</span> EMI Available
-                  </span>
-                  <span className="text-white font-bold text-sm sm:text-base">Easy Monthly</span>
+                <div className="flex flex-col bg-white/5 rounded-lg sm:rounded-xl px-3.5 sm:px-5 py-2.5 sm:py-3 gap-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base">
+                      <span className="text-gold-400">ℹ</span> Bank Finance
+                    </span>
+                    <span className="text-white font-bold text-sm sm:text-base text-right">Available</span>
+                  </div>
+                  <p className="text-gray-400 text-xs sm:text-sm italic pl-6 sm:pl-7">EMI ki suvidha nahi hai, bank finance uplabdh hai</p>
                 </div>
-                <div className="flex items-center justify-between bg-white/5 rounded-lg sm:rounded-xl px-3.5 sm:px-5 py-2.5 sm:py-3">
-                  <span className="text-gray-300 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base">
-                    <span className="text-green-400">✓</span> Registry
-                  </span>
-                  <span className="text-white font-bold text-sm sm:text-base">Included</span>
+                <div className="flex flex-col bg-white/5 rounded-lg sm:rounded-xl px-3.5 sm:px-5 py-2.5 sm:py-3 gap-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base">
+                      <span className="text-gold-400">ℹ</span> Registry Charge
+                    </span>
+                    <span className="text-white font-bold text-sm sm:text-base">Extra</span>
+                  </div>
+                  <p className="text-gray-400 text-xs sm:text-sm italic pl-6 sm:pl-7">Registry charges alag se lagega</p>
                 </div>
               </div>
 

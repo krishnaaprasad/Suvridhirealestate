@@ -122,18 +122,18 @@ export default function TrustSection() {
         </div>
 
         {/* Location Highlights */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 max-w-3xl mx-auto">
           {highlights.map((item, idx) => (
             <div
               key={idx}
-              className={`${item.bg} ${item.border} border rounded-xl sm:rounded-2xl p-3 sm:p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group`}
+              className={`${item.bg} ${item.border} border rounded-xl sm:rounded-2xl p-2 py-3 sm:p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-center`}
             >
-              <div className={`${item.iconColor} mx-auto mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`${item.iconColor} mx-auto mb-1.5 sm:mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}>
                 {item.icon}
               </div>
-              <h3 className="text-sm sm:text-xl font-bold text-gray-900">{item.label}</h3>
-              <p className={`text-2xl sm:text-3xl font-extrabold ${item.distColor} mt-0.5 sm:mt-1`}>{item.distance}</p>
-              <p className="text-gray-500 text-[10px] sm:text-sm mt-0.5 sm:mt-1">Distance</p>
+              <h3 className="text-[12px] sm:text-xl font-bold text-gray-900 leading-tight">{item.label}</h3>
+              <p className={`text-xl sm:text-3xl font-extrabold ${item.distColor} mt-0.5 sm:mt-2 tracking-tight`}>{item.distance}</p>
+              <p className="text-gray-500 text-[9px] sm:text-sm mt-0.5">Distance</p>
             </div>
           ))}
         </div>
