@@ -24,17 +24,35 @@ export default function LeadForm() {
     setError("");
 
     try {
+      // Generate Event ID for deduplication between Pixel and CAPI
+      const eventId = Date.now().toString() + Math.random().toString(36).substring(2, 10);
+
+      // Fire Server-Side Conversions API (CAPI) event
+      fetch("/api/conversion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          eventName: "Lead",
+          eventUrl: window.location.href,
+          eventId: eventId,
+          userData: {
+            name: formData.name,
+            phone: formData.phone,
+          }
+        })
+      }).catch(err => console.error("CAPI error:", err)); // Fire and forget
+
+      // Fire Meta Pixel Lead Event (Browser Side) with eventID for deduplication
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq('track', 'Lead', {}, { eventID: eventId });
+      }
+
       // Format the WhatsApp message with form details
       const message = `Hi! I am interested in plots at Gorakhpur. Here are my details:
 Name: ${formData.name}
 Phone: ${formData.phone}
 Budget: ${formData.budget || "Not specified"}
 Purpose: ${formData.purpose || "Not specified"}`;
-
-      // Fire Meta Pixel Lead Event
-      if (typeof window !== "undefined" && window.fbq) {
-        window.fbq('track', 'Lead');
-      }
 
       // Open WhatsApp in a new tab using the number found on the website
       const whatsappNumber = "919219418113";
