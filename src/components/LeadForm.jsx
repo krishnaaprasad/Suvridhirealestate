@@ -31,6 +31,11 @@ Phone: ${formData.phone}
 Budget: ${formData.budget || "Not specified"}
 Purpose: ${formData.purpose || "Not specified"}`;
 
+      // Fire Meta Pixel Lead Event
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq('track', 'Lead');
+      }
+
       // Open WhatsApp in a new tab using the number found on the website
       const whatsappNumber = "919219418113";
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
