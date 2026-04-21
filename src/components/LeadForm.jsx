@@ -1,5 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { supabase } from "@/lib/supabase";
+
+// Helper for debouncing
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
 
 export default function LeadForm() {
   const [formData, setFormData] = useState({
@@ -12,44 +26,70 @@ export default function LeadForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Function to save lead to Supabase
+  const saveLead = async (data, status = "partial") => {
+    // CRITICAL: We MUST have a phone number to upsert correctly (OnConflict: phone)
+    if (!data.phone) return;
+
+    try {
+      const { error } = await supabase
+        .from("leads")
+        .upsert(
+          {
+            phone: data.phone,
+            name: data.name,
+            budget: data.budget,
+            purpose: data.purpose,
+            status: status,
+            updated_at: new Date().toISOString(),
+          },
+          { onConflict: "phone" } // Updates existing lead if phone matches
+        );
+      
+      if (error) console.error("Supabase Error:", error.message);
+    } catch (err) {
+      console.error("Failed to save lead:", err);
+    }
+  };
+
+  // Debounced version of saveLead to prevent too many requests
+  const debouncedSave = useMemo(
+    () => debounce((data) => saveLead(data, "partial"), 1500),
+    []
+  );
+
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    const newFormData = { ...formData, [name]: value };
+    setFormData(newFormData);
+
+    // Only auto-save if they've at least started typing a phone number
+    if (newFormData.phone.length > 3 || newFormData.name.length > 2) {
+      debouncedSave(newFormData);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (loading) return; // Prevent double submissions
+    if (loading) return;
 
     setLoading(true);
     setError("");
 
     try {
-      // 1. Generate unique eventId for Deduplication
+      // 1. Save as 'submitted' in Supabase
+      await saveLead(formData, "submitted");
+
+      // 2. Generate unique eventId for Deduplication
       const eventId = "lead_" + Date.now().toString() + Math.random().toString(36).substring(2, 9);
 
-      // 2. Fire Meta Pixel Lead Event (Browser Side)
+      // 3. Fire Meta Pixel Lead Event (Browser Side)
       if (typeof window !== "undefined" && window.fbq) {
         window.fbq("track", "Lead", {
           content_name: "Property Inquiry",
           status: true,
         }, { eventID: eventId });
       }
-
-      // 3. Fire Conversions API (Server Side)
-      // We don't await this to keep the UI snappy, but we catch errors
-      fetch("/api/conversion", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          eventName: "Lead",
-          eventUrl: window.location.href,
-          eventId: eventId,
-          userData: {
-            name: formData.name,
-            phone: formData.phone,
-          },
-        }),
-      }).catch((err) => console.error("CAPI error:", err));
 
       // 4. Prepare WhatsApp Message
       const message = `Hi! I am interested in plots at Gorakhpur. Here are my details:
@@ -64,7 +104,7 @@ Purpose: ${formData.purpose || "Not specified"}`;
       // 5. Show Success UI
       setSubmitted(true);
 
-      // 6. 🔥 DELAY REDIRECT (CRITICAL) - Wait 1000ms for tracking to finalize
+      // 6. Delay Redirect to ensure tracking works
       setTimeout(() => {
         window.open(whatsappUrl, "_blank");
       }, 1000);
