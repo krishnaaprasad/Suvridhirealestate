@@ -28,8 +28,8 @@ export default function LeadForm() {
 
   // Function to save lead to Supabase
   const saveLead = async (data, status = "partial") => {
-    // CRITICAL: We MUST have a phone number to upsert correctly (OnConflict: phone)
-    if (!data.phone) return;
+    // CRITICAL: We MUST have a phone number AND a working Supabase client
+    if (!data.phone || !supabase) return;
 
     try {
       const { error } = await supabase
