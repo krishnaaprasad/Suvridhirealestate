@@ -7,7 +7,6 @@ export default function StickyButtons() {
       <a
         href="tel:+919219418113"
         id="sticky-call"
-        onClick={() => typeof window !== 'undefined' && window.fbq && window.fbq('track', 'Lead')}
         className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 text-white font-bold py-4 text-base hover:from-green-700 hover:to-green-600 transition-all duration-300"
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -24,7 +23,6 @@ export default function StickyButtons() {
       <a
         href="https://api.whatsapp.com/send?phone=919219418113&text=Hi%2C%20I%20am%20interested%20in%20plots%20at%20Gorakhpur.%20Please%20share%20details."
         id="sticky-whatsapp"
-        onClick={() => typeof window !== 'undefined' && window.fbq && window.fbq('track', 'Lead')}
         className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold py-4 text-base hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
