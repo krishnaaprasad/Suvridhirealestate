@@ -15,6 +15,7 @@ export default function Home() {
     <main className="flex-1">
       <Navbar />
       <HeroSection />
+      <LeadForm />
 
       {/* Section Divider */}
       <div className="section-divider" />
@@ -31,7 +32,6 @@ export default function Home() {
       </div>
 
       <GallerySection />
-      <LeadForm />
 
       <div className="bg-gold-50 text-gold-800 text-center py-2 sm:py-3 px-4 font-bold tracking-wide text-sm sm:text-base border-y border-gold-200">
         ⚠️ Book before rates increase

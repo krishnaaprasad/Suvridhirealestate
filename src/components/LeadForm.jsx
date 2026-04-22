@@ -54,7 +54,7 @@ export default function LeadForm() {
 
   // Debounced version of saveLead to prevent too many requests
   const debouncedSave = useMemo(
-    () => debounce((data) => saveLead(data, "partial"), 1500),
+    () => debounce((data) => saveLead(data, "partial"), 500),
     []
   );
 
