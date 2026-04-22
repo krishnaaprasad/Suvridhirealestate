@@ -22,9 +22,7 @@ export default function StickyButtons() {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919219418113?text=Hi%2C%20I%20am%20interested%20in%20plots%20at%20Gorakhpur.%20Please%20share%20details."
-        target="_blank"
-        rel="noopener noreferrer"
+        href="https://api.whatsapp.com/send?phone=919219418113&text=Hi%2C%20I%20am%20interested%20in%20plots%20at%20Gorakhpur.%20Please%20share%20details."
         id="sticky-whatsapp"
         onClick={() => typeof window !== 'undefined' && window.fbq && window.fbq('track', 'Lead')}
         className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold py-4 text-base hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300"

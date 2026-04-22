@@ -154,9 +154,7 @@ export default function LeadForm() {
                 
                 <p className="text-gray-500 text-sm mb-4">Want to talk right now?</p>
                 <a 
-                  href="https://wa.me/919219418113?text=Hi%2C%20I%20just%20filled%20the%20form%20for%20Suvridhi%20Bhoomi%20plots."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="https://api.whatsapp.com/send?phone=919219418113&text=Hi%2C%20I%20just%20filled%20the%20form%20for%20Suvridhi%20Bhoomi%20plots."
                   className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-green-500/20 transition-all hover:-translate-y-0.5"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
