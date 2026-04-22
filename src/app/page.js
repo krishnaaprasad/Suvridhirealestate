@@ -7,7 +7,6 @@ import GallerySection from "@/components/GallerySection";
 import LocationSection from "@/components/LocationSection";
 import UrgencySection from "@/components/UrgencySection";
 import LeadForm from "@/components/LeadForm";
-import StickyButtons from "@/components/StickyButtons";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -41,7 +40,6 @@ export default function Home() {
       <UrgencySection />
 
       <Footer />
-      <StickyButtons />
     </main>
   );
 }

@@ -254,10 +254,10 @@ export default function LeadForm() {
                 <button
                   type="submit"
                   id="form-submit"
-                  disabled={loading}
+                  disabled={loading || formData.phone.length < 10 || formData.name.length < 2}
                   className={`w-full py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg text-white transition-all duration-300 ${
-                    loading
-                      ? "bg-gray-400 cursor-not-allowed"
+                    loading || formData.phone.length < 10 || formData.name.length < 2
+                      ? "bg-gray-400 cursor-not-allowed opacity-70"
                       : "btn-shimmer shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                   }`}
                 >
